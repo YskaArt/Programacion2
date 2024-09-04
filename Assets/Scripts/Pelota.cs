@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -20,14 +21,13 @@ public class Pelota : MonoBehaviour
 
     void Update()
     {
-        
-
+       
         if (!ismoving)
         {
             PelotaRb.velocity = InicialVelocity;
             ismoving = true;
         }
-        
+        Victory();
         
     }
     private void OnCollisionEnter2D(Collision2D choque)
@@ -39,4 +39,18 @@ public class Pelota : MonoBehaviour
 
         }
     }
+    void Victory()
+    {
+        GameObject[] bricks = GameObject.FindGameObjectsWithTag("Ladrillo");
+        if (bricks.Length == 0) 
+        {
+            SceneManager.LoadScene("Victory");
+
+
+        }
+
+    }
+
+
+
 }
