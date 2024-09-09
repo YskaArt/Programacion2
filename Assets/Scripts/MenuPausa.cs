@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
@@ -52,5 +51,9 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
-    
+    public void Salir()
+    {
+        Application.Quit();
+
+    }
 }
